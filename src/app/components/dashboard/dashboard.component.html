@@ -1,0 +1,42 @@
+<div class="row my-4">
+  <div class="col-9">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <input
+          [(ngModel)]="product.label"
+          type="text"
+          placeholder="label"
+          class="form-control mb-2"
+          id="label"
+        />
+      </div>
+      <div class="col-auto">
+        <input
+          [(ngModel)]="product.quantity"
+          type="number"
+          placeholder="quantity"
+          class="form-control mb-2"
+          id="quantity"
+        />
+      </div>
+      <div class="col-auto">
+        <button (click)="addProduct()" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 text-right"></div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <app-charts my-id="chart1" [data]="products" type="bar"></app-charts>
+  </div>
+  <div class="col-md-6">
+    <app-charts my-id="chart2" [data]="products" type="line"></app-charts>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <app-charts my-id="chart3" [data]="products" type="pie"></app-charts>
+  </div>
+</div>
